@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<script src="~/Jquery/jquery-3.6.3.min.js"></script>
+<script src="~/Vegas/vegas/vegas.min.js"></script>
+<script src="~/js/site.js"></script>
+<link rel="stylesheet" href="~/Vegas/vegas/vegas.min.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @{ Html.RenderPartial("Header");}
+    <div>
+        @RenderBody()
+    </div>
+    <div>
+        @{
+            Html.RenderPartial("Footer");
+        }
+    </div>
+   
+</body>
+</html>
