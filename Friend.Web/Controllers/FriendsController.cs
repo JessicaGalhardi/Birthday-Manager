@@ -7,6 +7,8 @@ using System.Diagnostics;
 using Friend.Web.Filters;
 using Friends.Domain.Entities;
 using Friend.Web.TagHelpers;
+using Friend.Web.Views.Friends;
+using Friends.Domain.ViewModels;
 
 namespace Friend.Web.Controllers
 {
@@ -112,37 +114,31 @@ namespace Friend.Web.Controllers
 
 
         [HttpPost]
-        public IActionResult Form(Message message)
+        public IActionResult Form(MessageModel messageViewModel)
         {
 
-            
-            if ((!string.IsNullOrEmpty(message.Name)) || (!string.IsNullOrEmpty(message.Email)) || (!string.IsNullOrEmpty(message.Text)))
+            //Setting a sucess message for the user
+
+            ViewBag.messageOutput = new MessageOutput()
             {
-                //Setting a sucess message for the user
-                _message.Create(message);
+                IsValid = true,
+                Message = " Message sent was successfully! "
+               
+            };
 
-                ViewBag.messageOutput = new MessageOutput()
-                {
-                    Message = "Message sent successfully ",
-                    IsValid = true
-                };
-
-
-                return View(message);               
-            }
-            else
+            if (!ModelState.IsValid)
             {
+
                 //Setting error message if a field is not filled in for the user
                 ViewBag.messageOutput = new MessageOutput()
                 {
-                    Message = "Your message was not sent, please fill in all fields",
-                    IsValid = false
-                };
+                    IsValid = false,
+                    Message = "An error has occurred"
 
-                return View(message);
-
+                };               
             }
-            
+
+            return View(messageViewModel);
         }
         public IActionResult unknownError()
         {
