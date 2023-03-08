@@ -21,3 +21,23 @@ Back-end:</br>
  </br>
 The Birthday Manager was developed using a three-tier structure: Web(MVC), Domain with the business logic and types, and Services with the data,
 separating the responsibilities and limiting the layers to know only what is necessary from each other.
+
+# The App
+
+This project is a birthday manager. All data, including messages sent via the "Contact Us" form, are
+saved in a SQL SERVER LOCAL DB. For implementing the LocalDB I use Entity Framework and Migrations.
+
+When the user selects a friend at the table and changes the View, the selected item remains, I used Sections for that.
+
+In the form I use tag helpers  for the execution of the post and for handling errors. If the fields are null, the user has the message: "Your message was not sent, please fill in all fields" but if all fields are correct, the message is: "Message sent successfully".
+
+For the Frontend, I used Bootstrap and the Vegas Library in conjunction with JQuery to display multiple images in the Index View.
+
+The layout was adapted for mobile, tablets and desktop. 
+
+This video is a demo if you want to see the app in action.
+
+[![Alt text](https://img.youtube.com/vi/9f-ZS7BD-Cg/0.jpg )](https://youtube.com/shorts/9f-ZS7BD-Cg?feature=share)
+
+# Thank You!
+Thanks for reading my Readme and if you have any suggestions, I'm open to hearing from you. :+1: :raised_hands:
