@@ -10,7 +10,11 @@ namespace Friends.Domain.Interfaces
     public interface IFriendsListService 
     {
         IList<Friend> GetAll();
-
         IList<Friend> GetSelected(List<int> selected);
+
+        void Create(Friend friend);
+        void Delete(int id);
+        Friend Get(int id);
+        void Update(Friend friend);
     }
 }

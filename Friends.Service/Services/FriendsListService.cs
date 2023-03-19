@@ -16,6 +16,31 @@ namespace Friends.Service.Services
             _dbContext = dbContext;
         }
 
+        public void Create(Friend friend)
+        {
+            _dbContext.friends.Add(friend);
+            _dbContext.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var friend = _dbContext.friends.First(f => f.Id == id);
+            _dbContext.friends.Remove(friend);
+            _dbContext.SaveChanges();
+        }
+
+        public void Update(Friend friend)
+        {
+
+            _dbContext.friends.Update(friend);
+            _dbContext.SaveChanges();
+        }
+
+        public Friend Get(int id)
+        {
+            return _dbContext.friends.First(f => f.Id == id);
+        }
+
         public IList<Friend> GetAll()
         {
            return _dbContext.friends.ToList();
