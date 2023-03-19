@@ -1,0 +1,85 @@
+﻿@model List<Friends.Domain.Entities.Friend>
+
+<body>
+
+    <div class="banner"></div>
+
+    <div class="content"
+        <div>
+            <h1 >Those are your friends</h1>
+            <p class="title">Strengthen your  contacts network  with your friends' e-mails always at hand!</p>
+        </div>
+
+    </div>
+
+
+    @using (Html.BeginForm("birthday", "friends", FormMethod.Post))
+    {
+        <div class="tb">
+
+            <table class="table table-hover" style="font-family:'Lucida Bright'">
+                <thead>
+                    <tr class="rools">
+                        <td align="center"></td>
+                        <td align="center">CONTACT ID</td>
+                        <td align="center">NAME</td>
+                        <td align="center">LAST NAME</td>
+                        <td align="center">E-MAIL</td>
+                        <td align="center">FONE NUMBER</td>
+
+                    </tr>
+                </thead>
+
+
+                @{
+                    foreach (var friendX in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selected" value="@friendX.Id">
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => friendX.Id)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => friendX.FirstName)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => friendX.LastName)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => friendX.Email)
+                            </td>
+                            <td align="center">
+                                @Html.DisplayFor(modelItem => friendX.FoneNumber)
+                            </td>
+
+                        </tr>
+
+
+                    }
+
+                }
+            </table>
+        </div>
+
+        <br />
+
+        <div class="sending">
+            <button class="button" type="submit"> BIRTHDAY DETAILS</button>
+        </div>
+
+
+    }
+    <br />
+
+
+</body>
+
+
+
+
+
+
+

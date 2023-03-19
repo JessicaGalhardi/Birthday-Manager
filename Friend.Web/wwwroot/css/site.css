@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 40px;
+}
+
+    .menu ul {
+        list-style: none;
+        padding: 20px;
+        display: flex;
+    }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #000000;
+            padding: 10px;
+        }
+
+.logo {
+    font-weight: bolder;
+}
+
+
+.banner {
+    max-width: contain;
+    height: 600px;
+    margin: auto;
+    background-position: center;
+}
+
+.banner2 {
+    max-width: contain;
+    height: 600px;
+    background-image: url("../images/pessoas-comemorando.jpg");
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.bannerform {
+    max-width: 100% contain;
+    background-image: url(../images/blue-fone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    font-family: garet;
+    background-color: #F8F8FF;
+}
+
+@font-face {
+    font-family: garet;
+    src: url('../fontes/garet/GARET-BOOK.ttf'), url('../fontes/garet/GARET-BOOK.woff'), url('../fontes/garet/GARET-BOOK.woff2'), url('../fontes/garet/GARET-BOOK.eot'), url('../fontes/garet/GARET-BOOK.svg');
+}
+
+
+.title {
+    color: #808080;
+    font-family: Arial;
+    font-size: larger;
+}
+
+.lbl {
+    text-align: center;
+}
+
+.images {
+    width: 300px;
+    height: auto;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+    .content > div {
+        flex: 1;
+    }
+
+.rools, tr {
+    background-color: white;
+    color: #000000;
+}
+
+.tb {
+    padding: 40px;
+    border-radius: 40px;
+    background-color: white;
+    margin: 20px;
+}
+
+button {
+    background-color: #000000;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.sending {
+    text-align: center;
+}
+
+.form1 {
+    max-width: 600px;
+    border-radius: 100px;
+    padding: 40px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+    .form1 p {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+.formcontent {
+    margin: 40px 0 100px 350px;
+    text-align: center;
+}
+
+
+.error {
+    text-align: center;
+}
+
+.return {
+    margin: 60px;
+}
+
+footer {
+    position: relative;
+    font-size: 12px;
+    padding: 20px;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .formcontent {
+        margin: auto;
+    }
+    .banner, .banner2 {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    * {
+        font-size: small;
+    }
+    .menu {
+        display: inline-flex;
+        justify-content: center;
+        padding: 0 2px;
+    }
+    .banner,.banner2{
+        height:250px;
+    }
+    .formcontent {
+        margin: auto 10px;
+    }
+}

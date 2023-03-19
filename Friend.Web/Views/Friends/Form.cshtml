@@ -1,0 +1,57 @@
+﻿@model Friends.Domain.ViewModels.MessageModel
+
+<body class="bannerform">
+
+    <div class="formcontent">
+
+        <div>
+            <h1>Talk to us!</h1>
+            <p class="title">Do you have a question, suggestion? Please, sent us a message</p>
+        </div>
+
+
+        <div class="return">    <formmessage message-output="@ViewBag.MessageOutput" /></div>
+
+        @using (Html.BeginForm("Form", "Friends", FormMethod.Post))
+        {
+            <section class="form1">
+
+                <div>
+                    <p>
+                        Leave your message
+                    </p>
+                </div>
+                <div class="mb-3">
+                    @Html.Label("name","Name:", new {@class= "form-label"})
+                    @Html.TextArea("Name", Model?.Name,new {@class= "form-control"})
+                    @Html.ValidationMessageFor(m=> m.Name,"", new { @class = "text-danger"})@*The fields are required. With this validation the field show a message for the user infoming this!*@
+                </div>
+                <div class="mb-3">
+                    @Html.Label("email", "E-mail: ",new {@class= "form-label"})
+                    @Html.TextArea("Email", Model?.Email,new {@class= "form-control"})
+                    @Html.ValidationMessageFor(m=> m.Email,"", new { @class = "text-danger"})
+                </div>
+                <div>
+                    @Html.Label("text", "Your Message: ", new {@class= "form-label"})
+                    @Html.TextArea("Text", Model?.Text,new {@class= "form-control"})
+                    @Html.ValidationMessageFor(m=> m.Text,"", new { @class = "text-danger"})
+                </div>
+                <div>
+                    <br />
+
+                    <div class="sending">
+                        <button class="button" type="submit">SEND</button>
+
+                    </div>
+
+                </div>
+            </section>
+        }
+
+    </div>
+
+
+    <br />
+
+
+</body>
