@@ -1,43 +1,148 @@
+# 🎂 Birthday Manager
 
-# Birthday Manager
-Project created to improve my knowledge acquired at the University.
+A simple and scalable Birthday Manager application built with **.NET**, designed to manage friends and their birthdays through a clean, layered architecture.
 
+---
 
- # Technologies and programming languages:</br>
- </br>
- Front-end:
- </br>
- </br>
-<a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a>  <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> 
- </br>
- </br>
-Back-end:</br>
- </br>
-<a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a>
-<a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/> </a> 
-<a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> </p>
+## 📌 Overview
 
-# Project Architecture:</br>
- </br>
-The Birthday Manager was developed using a three-tier structure: Web(MVC), Domain with the business logic and types, and Services with the data,
-separating the responsibilities and limiting the layers to know only what is necessary from each other.
+Birthday Manager is a multi-layered application that allows users to store, manage, and retrieve information about friends and their birthdays. The project was developed with a focus on **separation of concerns**, **maintainability**, and **scalability**, following common enterprise patterns.
 
-# The App
+---
 
-This project is a birthday manager. All data, including messages sent via the "Contact Us" form, are
-saved in a SQL SERVER LOCAL DB. For implementing the LocalDB I use Entity Framework and Migrations.
+## 🏗️ Architecture
 
-When the user selects a friend at the table and changes the View, the selected item remains, I used Sections for that.
+The solution is organized into multiple projects, each with a clear responsibility:
 
-In the form I use tag helpers  for the execution of the post and for handling errors. If the fields are null, the user has the message: "Your message was not sent, please fill in all fields" but if all fields are correct, the message is: "Message sent successfully".
+* **Friends.API**
+  Exposes RESTful endpoints for managing friends and birthdays.
 
-For the Frontend, I used Bootstrap and the Vegas Library in conjunction with JQuery to display multiple images in the Index View.
+* **Friends.Web**
+  Front-end layer (MVC/Razor) responsible for user interaction.
 
-The layout was adapted for mobile, tablets and desktop. 
+* **Friends.Service**
+  Contains business logic and application rules.
 
-This video is a demo if you want to see the app in action.
+* **Friends.Domain**
+  Core domain models and entities.
 
-[![Alt text](https://img.youtube.com/vi/9f-ZS7BD-Cg/0.jpg )](https://youtube.com/shorts/9f-ZS7BD-Cg?feature=share)
+---
 
-# Thank You!
-Thanks for reading my Readme and if you have any suggestions, I'm open to hearing from you. :+1: :raised_hands:
+## ⚙️ Technologies Used
+
+* .NET (ASP.NET Core)
+* C#
+* Entity Framework (if applicable)
+* SQL Server
+* REST API
+* MVC / Razor (Web layer)
+
+---
+
+## 🚀 Features
+
+* Add, edit, and delete friends
+* Store and manage birthdays
+* Retrieve birthday lists
+* Basic data organization and structure
+* Layered architecture for easy extension
+
+---
+
+## ▶️ How to Run the Project
+
+### Prerequisites
+
+* .NET SDK installed
+* SQL Server (or compatible database)
+
+### Steps
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/Birthday-Manager.git
+```
+
+2. Open the solution file:
+
+```bash
+Birthday-Manager.sln
+```
+
+3. Configure the database connection string in:
+
+```
+appsettings.json
+```
+
+4. Apply database setup (if needed):
+
+* Run SQL scripts OR
+* Execute migrations (if configured)
+
+5. Run the project:
+
+* Set `Friends.API` or `Friends.Web` as the startup project
+* Press `F5` or run via CLI:
+
+```bash
+dotnet run
+```
+
+---
+
+## 📁 Project Structure
+
+```
+Birthday-Manager
+│
+├── Friends.API        # API layer (controllers/endpoints)
+├── Friends.Web        # Front-end (UI)
+├── Friends.Service    # Business logic
+├── Friends.Domain     # Core entities/models
+└── SQLQuery1.sql      # Database script (initial setup)
+```
+
+---
+
+## 🧠 Design Decisions
+
+* **Layered Architecture**
+  Keeps responsibilities separated and improves maintainability.
+
+* **Service Layer**
+  Centralizes business logic instead of placing it in controllers.
+
+* **Domain Layer Isolation**
+  Makes the core models reusable and independent from infrastructure.
+
+---
+
+## 🔧 Possible Improvements
+
+This project can be extended with:
+
+* Unit and integration tests
+* Authentication and authorization
+* Birthday notifications/reminders
+* Filtering (e.g., upcoming birthdays)
+* Improved UI/UX
+* Use of DTOs and AutoMapper
+* Full database migration setup
+
+---
+
+## 📄 License
+
+This project is for study and portfolio purposes.
+
+---
+
+## 👩‍💻 Author
+
+Developed by **Jessica Galhardi**
+Feel free to connect or explore more projects on GitHub.
+
+---
+
